@@ -99,10 +99,10 @@ section p {
 }
 
 .box {
-  margin: 76px;
+  margin: 66px;
   padding: auto;
   height: 24rem;
-  width: 16rem;
+  width: 18rem;
   border: 1px solid #010101;
   display: inline-flex;
   flex-direction: column;
@@ -112,7 +112,7 @@ section p {
 .box img {
   margin: 6px 12px 12px 80px;
   height: 90px;
-  width: 78px;
+  width: 90px;
   border-radius: 50%;
 }
 .box h4 {
@@ -126,7 +126,7 @@ section p {
 }
 .btn {
   background-color: #ccc;
-  padding: 8px 16px;
+  padding: 8px 18px;
   border: none;
   font-weight: bold;
   cursor: pointer;
