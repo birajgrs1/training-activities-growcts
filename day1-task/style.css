@@ -26,6 +26,7 @@ nav li {
   display: inline-block;
   margin: 0 20px;
   font-weight: 600;
+  text-transform: capitalize;
 }
 
 nav a {
@@ -109,13 +110,13 @@ section p {
   box-shadow: rgba(217, 217, 250, 0.78);
 }
 .box img {
-  margin: 4px 10px 10px 70px;
+  margin: 6px 12px 12px 80px;
   height: 90px;
   width: 78px;
   border-radius: 50%;
 }
 .box h4 {
-  margin: 4px 10px 10px 70px;
+  margin: 4px 10px 10px 76px;
 }
 .box p {
   width: 100%;
