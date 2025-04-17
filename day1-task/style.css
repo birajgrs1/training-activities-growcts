@@ -5,27 +5,26 @@
 }
 
 body {
-  background-color: #fceef0;
+  background-color: #f7f2f3;
   font-family: "Times New Roman", Times, serif;
   line-height: 1.6;
 }
 
 header {
-  background-color: #def8fa;
-  color: #0c0c0c;
+  background-color: #d5f7fd;
   padding: 12px 0;
   text-align: center;
 }
 
 nav ul {
   list-style: none;
-  padding: 0;
 }
 
 nav li {
   display: inline-block;
   margin: 0 20px;
   font-weight: 600;
+  font-size: 18px;
   text-transform: capitalize;
 }
 
@@ -54,22 +53,35 @@ article h2 {
   margin-bottom: 20px;
 }
 
+#home-section img {
+  height: 16rem;
+  width: 16rem;
+  border-radius: 40%;
+}
+
 article p {
   font-style: italic;
-  font-weight: 500;
+  font-weight: 600;
   max-width: 800px;
+  font-size: 36px;
+  color: rgba(90, 4, 76, 0.877);
   margin: 0 auto 20px auto;
+}
+
+.button-container {
+  text-align: center;
+  margin: 20px 0;
 }
 
 button {
   background-color: #23c9fc;
   color: #000;
-  padding: 10px 20px;
+  padding: 12px 24px;
   border: none;
   font-weight: bold;
   cursor: pointer;
   border-radius: 25px;
-  margin: 10px;
+  margin: 6px;
   transition: transform 0.2s ease;
 }
 
@@ -98,53 +110,10 @@ section p {
   margin: 0 auto 20px auto;
 }
 
-.box {
-  margin: 66px;
-  padding: auto;
-  height: 24rem;
-  width: 18rem;
-  border: 1px solid #010101;
-  display: inline-flex;
-  flex-direction: column;
-  border-radius: 16px;
-  box-shadow: rgba(217, 217, 250, 0.78);
-}
-.box img {
-  margin: 6px 12px 12px 80px;
-  height: 90px;
-  width: 90px;
-  border-radius: 50%;
-}
-.box h4 {
-  margin: 4px 10px 10px 76px;
-}
-.box p {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.btn {
-  background-color: #ccc;
-  padding: 8px 18px;
-  border: none;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 25px;
-  margin: 7px;
-  transition: transform 0.2s ease;
-  color: #000;
-}
-
-.btn:hover {
-  transform: scale(0.78);
-  border: 1px solid tomato;
-}
-
 hr {
   margin: 20px auto;
   width: 80%;
-  border: 1px solid #e0fafc;
+  border: 1px solid #cff7fa;
 }
 
 table {
@@ -164,9 +133,62 @@ tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
+.blog-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.box {
+  margin: 20px;
+  padding: 20px;
+  height: 24rem;
+  width: 18rem;
+  display: inline-block;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  background-color: #faf9f5;
+  text-align: center;
+  box-shadow: 2px 2px 5px rgba(170, 170, 170, 0.2);
+}
+
+.box img {
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+}
+
+.box h4 {
+  margin-top: 10px;
+  font-size: 18px;
+}
+
+.box p {
+  padding: 10px;
+  font-size: 15px;
+}
+
+.btn {
+  background-color: #ccc;
+  padding: 8px 18px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 25px;
+  color: #000;
+}
+
+.btn:hover {
+  transform: scale(0.95);
+  border: 1px solid tomato;
+}
+
 #contact-section {
   margin-top: 40px;
   text-align: center;
+  background-color: #faf9f5;
+  border: 1px solid #f0e8e8;
+  border-radius: 20px;
+  padding: 30px;
 }
 
 form {
@@ -184,7 +206,7 @@ form label {
 form input,
 form textarea {
   width: 100%;
-  padding: 8px;
+  padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #aaa;
   border-radius: 5px;
@@ -192,31 +214,33 @@ form textarea {
 
 form textarea {
   height: 100px;
-  resize: vertical;
+  resize: none;
 }
 
 form button[type="submit"] {
   background-color: #23c9fc;
   color: #000;
-  border: none;
+  padding: 10px 20px;
   font-weight: bold;
+  border-radius: 25px;
+  border: none;
   cursor: pointer;
-  border-radius: 20px;
-  padding: 10px 30px;
-  margin-top: 10px;
 }
 
 form button[type="submit"]:hover {
   transform: scale(1.05);
-  background-color: #1db3e3;
+  border: 1px solid #999;
 }
 
 footer {
-  background-color: #def8fa;
-  font-weight: 600;
-  color: #0c0c0c;
   text-align: center;
-  padding: 12px;
-  margin-top: 40px;
-  font-size: 14px;
+  padding: 20px;
+  background-color: #d5f7fd;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Applying responsive design --- Modile first */
+@media screen {
+  
 }
