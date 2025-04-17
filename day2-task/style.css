@@ -251,7 +251,7 @@ tr:nth-child(even) {
 }
 
 .btn:hover {
-  transform: scale(0.95);
+  transform: scale(1.005);
   border: 1px solid tomato;
 }
 
