@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio-task3</title>
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <header class="w-full bg-primaryColor text-secondaryColor py-4 shadow-md">
+      <nav
+        class="container mx-auto px-4 flex flex-wrap items-center justify-between"
+      >
+        <div class="flex items-center space-x-4">
+          <span class="text-[22px] font-bold capitalize">my logo</span>
+        </div>
+
+        <ul
+          class="flex flex-wrap items-center gap-6 text-[18px] font-semibold capitalize"
+        >
+          <li class=" pl-[8px] pr-[8px]">
+            <a
+              href="#"
+              class="hover:text-[#ff4875] hover:underline transition-colors duration-200"
+              >home</a
+            >
+          </li>
+          <li class=" pl-[8px] pr-[8px]">
+            <a
+              href="#about-section"
+              class="hover:text-[#ff4875] hover:underline transition-colors duration-200"
+              >about</a
+            >
+          </li>
+          <li class=" pl-[8px] pr-[8px]">
+            <a
+              href="#project-section"
+              class="hover:text-[#ff4875] hover:underline transition-colors duration-200"
+              >gallery</a
+            >
+          </li>
+          <li class=" pl-[8px] pr-[8px]">
+            <a
+              href="#blog-section"
+              class="hover:text-[#ff4875] hover:underline transition-colors duration-200"
+              >blogs</a
+            >
+          </li>
+          <li class=" pl-[8px] pr-[8px]">
+            <a
+              href="#contact-section"
+              class="hover:text-[#ff4875] hover:underline transition-colors duration-200"
+              >contact</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main
+      role="main"
+      class="main-container w-[100%] pl-[40px] pr-[20px] mt-[16px]"
+    >
+      <article id="home-section" class="text-center p-[20px]">
+        <h2 class="text-[32px] mb-[20px] font-[600]">
+          Hello Everyone,<br />Welcome to My Portfolio!
+        </h2>
+        <div class="flex justify-center mt-2">
+          <img
+            src="./images/img.png"
+            alt="Profile picture"
+            class="h-64 w-64 rounded-xl mb-3"
+          />
+        </div>
+
+        <div class="intro flex items-center justify-center">
+          <p
+            class="italic font-semibold max-w-[800px] text-[32px] text-baseColor mt-2"
+          >
+            Hi, I'm <strong>Biraj</strong> — a passionate creator and dedicated
+            problem solver, driven by innovation, creativity, and a deep love
+            for technology.
+          </p>
+        </div>
+      </article>
+      <hr />
+
+      <section id="about-section mt-[16px]">
+        <div class="about flex items-center justify-center">
+          <h3 class="text-[30px] font-[600] mb-[10px]">About Me</h3>
+        </div>
+        <div class="description flex items-center justify-center mt-[12px]">
+          <p class="max-w-[800px] mb-[16px]">
+            Hello! I'm <strong>Biraj</strong>, a highly motivated and
+            detail-oriented <strong>Full Stack Web Developer</strong> with
+            hands-on experience in both frontend and backend technologies.
+            <br /><br />
+            I specialize in the <strong>MERN Stack</strong> —
+            <em>MongoDB, Express.js, React.js, and Node.js</em> — and have
+            successfully built dynamic, responsive, and scalable web
+            applications. In addition, I work with
+            <strong>Python (Django)</strong> for building robust backend systems
+            and RESTful APIs. <br /><br />
+            I also have a strong passion for user interface design and
+            prototyping, with practical knowledge of <strong>Figma</strong> for
+            creating clean and user-centric designs. My understanding of
+            databases extends to both SQL and NoSQL solutions, making me a
+            versatile developer for any kind of project. <br /><br />
+            Whether you're looking for a committed freelancer to join your team,
+            or you're someone trying to break into the tech industry and need
+            personalized guidance, I’m here to help. <br /><br />
+            <strong>Let’s collaborate and bring your ideas to life!</strong>
+          </p>
+        </div>
+
+        <div
+          class="button-container items-center flex justify-center gap-6 mb-[28px]"
+        >
+          <button
+            class="btn1 bg-[#67e9ee] border-0 text-secondaryColor font-bold cursor-pointer rounded-md transition-[0.3s ease] pt-[12px] pb-[12px] pl-[24px] pr-[24px] hover:scale-105 hover:border-borderColor"
+          >
+            Learn More
+          </button>
+          <button
+            class="btn2 bg-[#ee5695] border-0 text-secondaryColor font-bold cursor-pointer rounded-md transition-[0.3s ease] pt-[12px] pb-[12px] pl-[24px] pr-[24px] hover:scale-105 hover:border-borderColor"
+            id="contact"
+          >
+            Hire Me
+          </button>
+        </div>
+        <hr />
+        <div
+          class="download-container mt-[12px] mb-[12px] items-center flex justify-center"
+        >
+          <div
+            class="cv-download bg-[#e0e0dc] border border-[#999] rounded-md ml-[24px] p-[16px] hover:border-[#fab9f5] scale-95"
+          >
+            <a href="./assets/myResumee.pdf" download role="button">
+              Download CV
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="32px"
+                viewBox="0 -960 960 960"
+                width="32px"
+                fill="#1f1f1f"
+                class="inline-block"
+              >
+                <path
+                  d="M480-315.33 284.67-510.67l47.33-48L446.67-444v-356h66.66v356L628-558.67l47.33 48L480-315.33ZM226.67-160q-27 0-46.84-19.83Q160-199.67 160-226.67V-362h66.67v135.33h506.66V-362H800v135.33q0 27-19.83 46.84Q760.33-160 733.33-160H226.67Z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <hr />
+
+        <div class="table-container mt-[18px] flex items-center justify-center overflow-x-auto">
+          <div class="overflow-hidden rounded-xl shadow-md w-full">
+            <table class="w-full border-collapse">
+              <thead>
+                <tr class="bg-[#f0f0f0]">
+                  <th class="border border-borderColor text-left p-[10px]">
+                    Sno
+                  </th>
+                  <th class="border border-borderColor text-left p-[10px]">
+                    My Projects
+                  </th>
+                  <th class="border border-borderColor text-left p-[10px]">
+                    Frameworks used
+                  </th>
+                  <th class="border border-borderColor text-left p-[10px]">
+                    Completed Date
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="even:bg-[#d4f0f8] hover:bg-[#f5f5f5] transition-all">
+                  <td class="border border-borderColor text-left p-[10px]">
+                    1
+                  </td>
+                  <td class="border border-borderColor text-left p-[10px]">
+                    Learning Management System
+                  </td>
+                  <td class="border border-borderColor text-left p-[10px]">
+                    Django+Reactjs
+                  </td>
+                  <td class="border border-borderColor text-left p-[10px]">
+                    02/10/2025
+                  </td>
+                </tr>
+                <tr class="even:bg-[#d4f0f8] hover:bg-[#f5f5f5] transition-all">
+                  <td class="border border-borderColor text-left p-[10px]">
+                    2
+                  </td>
+                  <td class="border border-borderColor text-left p-[10px]">
+                    Food Delivery App
+                  </td>
+                  <td class="border border-borderColor text-left p-[10px]">
+                    MERN
+                  </td>
+                  <td class="border border-borderColor text-left p-[10px]">
+                    07/11/2024
+                  </td>
+                </tr>
+                <tr class="even:bg-[#d4f0f8] hover:bg-[#f5f5f5] transition-all">
+                  <td class="border border-borderColor text-left p-[10px]">
+                    3
+                  </td>
+                  <td class="border border-borderColor text-left p-[10px]">
+                    E-commerce Website
+                  </td>
+                  <td class="border border-borderColor text-left p-[10px]">
+                    MERN
+                  </td>
+                  <td class="border border-borderColor text-left p-[10px]">
+                    09/17/2024
+                  </td>
+                </tr>
+                <tr class="even:bg-[#d4f0f8] hover:bg-[#f5f5f5] transition-all">
+                  <td class="border border-borderColor text-left p-[10px]">
+                    4
+                  </td>
+                  <td class="border border-borderColor text-left p-[10px]">
+                    News Website
+                  </td>
+                  <td class="border border-borderColor text-left p-[10px]">
+                    Nextjs
+                  </td>
+                  <td class="border border-borderColor text-left p-[10px]">
+                    01/13/2025
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      <hr />
+
+      <section id="project-section">
+        <div
+          class="gallery-heading flex items-center justify-center mt-[18px] mb-[14px] md:grid-cols-3 "
+        >
+          <h3 class="text-[30px] font-semibold mb-[10px]">
+            Explore My Project Gallery
+          </h3>
+        </div>
+
+        <div class="grid-container flex flex-wrap justify-center gap-[20px]">
+          <div
+            class="grid w-full max-w-[1100px] gap-[20px] grid-cols-1 mb-[24px] sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+          >
+            <div class="bg-white rounded-sm p-[10px] shadow-md">
+              <img
+                src="./images/ap1_img.PNG"
+                class="w-full h-[80%] rounded-sm"
+                alt="project image 1"
+              />
+              <a href="https://github.com/birajgrs1">
+                <button
+                  class="mt-2 px-4 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 transition-all duration-300"
+                >
+                  Link
+                </button>
+              </a>
+            </div>
+
+            <div class="bg-white rounded-sm p-[10px] shadow-md">
+              <img
+                src="./images/ap2_lms_img.png"
+                class="w-full h-[80%] rounded-sm"
+                alt="project image 2"
+              />
+              <a href="https://github.com/birajgrs1">
+                <button
+                  class="mt-2 px-4 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 transition-all duration-300"
+                >
+                  Link
+                </button>
+              </a>
+            </div>
+
+            <div class="bg-white rounded-sm p-[10px] shadow-md">
+              <img
+                src="./images/ecomm_ap3_img.png"
+                class="w-full h-[80%] rounded-sm"
+                alt="project image 3"
+              />
+              <a href="https://github.com/birajgrs1">
+                <button
+                  class="mt-2 px-4 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 transition-all duration-300"
+                >
+                  Link
+                </button>
+              </a>
+            </div>
+
+            <div class="bg-white rounded-sm p-[10px] shadow-md">
+              <img
+                src="./images/ap4_news_img.png"
+                class="w-full h-[80%] rounded-sm"
+                alt="project image 4"
+              />
+              <a href="https://github.com/birajgrs1">
+                <button
+                  class="mt-2 px-4 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 transition-all duration-300"
+                >
+                  Link
+                </button>
+              </a>
+            </div>
+
+            <div class="bg-white rounded-sm p-[10px] shadow-md">
+              <img
+                src="./images/ap1_img.PNG"
+                class="w-full h-[80%] rounded-sm"
+                alt="project image 1"
+              />
+              <a href="https://github.com/birajgrs1">
+                <button
+                  class="mt-2 px-4 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 transition-all duration-300"
+                >
+                  Link
+                </button>
+              </a>
+            </div>
+
+            <div class="bg-white rounded-sm p-[10px] shadow-md">
+              <img
+                src="./images/ap2_lms_img.png"
+                class="w-full h-[80%] rounded-sm"
+                alt="project image 2"
+              />
+              <a href="https://github.com/birajgrs1">
+                <button
+                  class="mt-2 px-4 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 transition-all duration-300"
+                >
+                  Link
+                </button>
+              </a>
+            </div>
+
+            <div class="bg-white rounded-sm p-[10px] shadow-md">
+              <img
+                src="./images/ecomm_ap3_img.png"
+                class="w-full h-[80%] rounded-sm"
+                alt="project image 3"
+              />
+              <a href="https://github.com/birajgrs1">
+                <button
+                  class="mt-2 px-4 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 transition-all duration-300"
+                >
+                  Link
+                </button>
+              </a>
+            </div>
+
+            <div class="bg-white rounded-sm p-[10px] shadow-md">
+              <img
+                src="./images/ap4_news_img.png"
+                class="w-full h-[80%] rounded-sm"
+                alt="project image 4"
+              />
+              <a href="https://github.com/birajgrs1">
+                <button
+                  class="mt-2 px-4 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 transition-all duration-300"
+                >
+                  Link
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <hr />
+
+      <section id="blog-section">
+        <div
+          class="blog-heading flex items-center justify-center mt-[18px] mb-[14px]"
+        >
+          <h3 class="text-[30px] font-semibold mb-[10px]">My Blogs</h3>
+        </div>
+        <div
+          class="blog-container flex items-center justify-center mt-[18px] mb-[14px]"
+        >
+          <div
+            class="box m-[20px] p-[20px] shadow-md h-[24rem] w-[18rem] inline-block border border-borderColor rounded-md bg-[#faf9f5] items-center"
+          >
+            <img
+              src="./images/img1.png"
+              alt="MERN Stack"
+              class="rounded-full w-[90px] h-[90px] ml-[70px]"
+            />
+            <h4 class="mt-[10px] text-[22px] ml-[56px] font-bold">
+              MERN Stack
+            </h4>
+            <p class="p-[10px] text-[16px] ml-[12px]">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Voluptatibus, placeat. Amet aspernatur sunt a quis.
+            </p>
+            <button
+              class="btn bg-[#ccc] pl-[8px] pr-[18px] font-semibold cursor-default mt-[10px] ml-[26px] rounded-md text-secondaryColor hover:border hover:border-[tomato] hover:scale-95"
+            >
+              Learn more
+            </button>
+          </div>
+          <div
+            class="box m-[20px] p-[20px] shadow-md h-[24rem] w-[18rem] inline-block border border-borderColor rounded-md bg-[#faf9f5] items-center"
+          >
+            <img
+              src="./images/img2.jpeg"
+              alt="Django"
+              class="rounded-full w-[90px] h-[90px] ml-[70px]"
+            />
+            <h4 class="mt-[10px] text-[22px] ml-[56px] font-bold">
+              Python(Django)
+            </h4>
+            <p class="p-[10px] text-[16px] ml-[12px]">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Voluptatibus, placeat. Amet aspernatur sunt a quis.
+            </p>
+            <button
+              class="btn bg-[#ccc] pl-[8px] pr-[18px] font-semibold cursor-default rounded-md mt-[10px] ml-[26px] text-secondaryColor hover:border hover:border-[tomato] hover:scale-95"
+            >
+              Learn more
+            </button>
+          </div>
+          <div
+            class="box m-[20px] p-[20px] shadow-md h-[24rem] w-[18rem] inline-block border border-borderColor rounded-md bg-[#faf9f5] items-center"
+          >
+            <img
+              src="./images/img3.png"
+              alt="Figma"
+              class="rounded-full w-[90px] h-[90px] ml-[70px]"
+            />
+            <h4 class="mt-[10px] text-[22px] ml-[56px] font-bold">
+              Figma Design
+            </h4>
+            <p class="p-[10px] text-[16px] ml-[12px]">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Voluptatibus, placeat. Amet aspernatur sunt a quis.
+            </p>
+            <button
+              class="btn bg-[#ccc] pl-[8px] pr-[18px] font-semibold cursor-default rounded-md mt-[10px] ml-[26px] text-secondaryColor hover:border hover:border-[tomato] hover:scale-95"
+            >
+              Learn more
+            </button>
+          </div>
+        </div>
+      </section>
+      <hr />
+
+      <section
+        id="contact-section"
+        class="bg-bgNew border border-[#f1f2f1] shadow-sm p-[30px] mt-[40px] ml-[46px] mb-[18px]"
+      >
+        <form role="form" class="max-w-[600px] ml-auto mr-auto font-bold">
+          <div
+            class="contact-heading flex items-center justify-center mt-[18px] mb-[14px]"
+          >
+            <h3 class="text-[30px] font-semibold mb-[10px]">Contact Me</h3>
+          </div>
+          <label for="name" class="block font-bold mt-[10px] mb-[5px]"
+            >Name:</label
+          >
+          <input
+            type="text"
+            id="name"
+            class="w-[100%] p-[10px] mb-[15px] border border-borderColor rounded-sm"
+          />
+
+          <label for="contact" class="block font-bold mt-[10px] mb-[5px]"
+            >Contact no:</label
+          >
+          <input
+            type="text"
+            id="contact"
+            class="w-[100%] p-[10px] mb-[15px] border border-borderColor rounded-sm"
+          />
+
+          <label for="email" class="block font-bold mt-[10px] mb-[5px]"
+            >Email id:</label
+          >
+          <input
+            type="email"
+            id="email"
+            class="w-[100%] p-[10px] mb-[15px] border border-borderColor rounded-sm"
+          />
+
+          <label for="issue" class="block font-bold mt-[10px] mb-[5px]"
+            >Message:</label
+          >
+          <textarea
+            name="issue"
+            id="issue"
+            class="w-[100%] p-[10px] mb-[15px] h-[120px] border border-borderColor rounded-sm"
+          ></textarea>
+
+          <button
+            type="submit"
+            class="bg-[#23c9fc] text-secondaryColor font-bold cursor-pointer rounded-lg ml-[220px] pt-[10px] pb-[10px] pl-[20px] pr-[20px] hover:scale-105 hover:border hover:border-borderColor hover:transition transition-shadow duration-75"
+          >
+            Submit
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <footer
+      class="bg-primaryColor text-secondaryColor font-bold text-[18px] p-[10px] flex justify-center w-[100%]"
+    >
+      &#169; Copyrights 2025 Birajgrs. All Rights Reserved.
+    </footer>
+  </body>
+</html>
