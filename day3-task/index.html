@@ -8,236 +8,119 @@
   </head>
   <body>
     <header class="w-full bg-primaryColor text-secondaryColor py-4 shadow-md">
-      <nav
-        class="container mx-auto px-4 flex flex-wrap items-center justify-between"
-      >
+      <nav class="container mx-auto px-4 flex flex-wrap items-center justify-between">
         <div class="flex items-center space-x-4">
           <span class="text-[22px] font-bold capitalize">my logo</span>
         </div>
 
-        <ul
-          class="flex flex-wrap items-center gap-6 text-[18px] font-semibold capitalize"
-        >
-          <li class=" pl-[8px] pr-[8px]">
-            <a
-              href="#"
-              class="hover:text-[#ff4875] hover:underline transition-colors duration-200"
-              >home</a
-            >
-          </li>
-          <li class=" pl-[8px] pr-[8px]">
-            <a
-              href="#about-section"
-              class="hover:text-[#ff4875] hover:underline transition-colors duration-200"
-              >about</a
-            >
-          </li>
-          <li class=" pl-[8px] pr-[8px]">
-            <a
-              href="#project-section"
-              class="hover:text-[#ff4875] hover:underline transition-colors duration-200"
-              >gallery</a
-            >
-          </li>
-          <li class=" pl-[8px] pr-[8px]">
-            <a
-              href="#blog-section"
-              class="hover:text-[#ff4875] hover:underline transition-colors duration-200"
-              >blogs</a
-            >
-          </li>
-          <li class=" pl-[8px] pr-[8px]">
-            <a
-              href="#contact-section"
-              class="hover:text-[#ff4875] hover:underline transition-colors duration-200"
-              >contact</a
-            >
-          </li>
+        <ul class="flex flex-wrap items-center gap-4 md:gap-6 text-[16px] md:text-[18px] font-semibold capitalize">
+          <li><a href="#" class="hover:text-[#ff4875] hover:underline transition-colors duration-200">home</a></li>
+          <li><a href="#about-section" class="hover:text-[#ff4875] hover:underline transition-colors duration-200">about</a></li>
+          <li><a href="#project-section" class="hover:text-[#ff4875] hover:underline transition-colors duration-200">gallery</a></li>
+          <li><a href="#blog-section" class="hover:text-[#ff4875] hover:underline transition-colors duration-200">blogs</a></li>
+          <li><a href="#contact-section" class="hover:text-[#ff4875] hover:underline transition-colors duration-200">contact</a></li>
         </ul>
       </nav>
     </header>
 
-    <main
-      role="main"
-      class="main-container w-[100%] pl-[40px] pr-[20px] mt-[16px]"
-    >
-      <article id="home-section" class="text-center p-[20px]">
-        <h2 class="text-[32px] mb-[20px] font-[600]">
+    <main role="main" class="main-container w-full px-4 md:px-10 lg:px-20 mt-4">
+      <!-- Home Section -->
+      <article id="home-section" class="text-center py-6 px-4">
+        <h2 class="text-[28px] md:text-[32px] mb-4 font-semibold">
           Hello Everyone,<br />Welcome to My Portfolio!
         </h2>
         <div class="flex justify-center mt-2">
-          <img
-            src="./images/img.png"
-            alt="Profile picture"
-            class="h-64 w-64 rounded-xl mb-3"
-          />
+          <img src="./images/img.png" alt="Profile picture" class="h-48 w-48 md:h-64 md:w-64 rounded-xl mb-3" />
         </div>
 
         <div class="intro flex items-center justify-center">
-          <p
-            class="italic font-semibold max-w-[800px] text-[32px] text-baseColor mt-2"
-          >
-            Hi, I'm <strong>Biraj</strong> — a passionate creator and dedicated
-            problem solver, driven by innovation, creativity, and a deep love
-            for technology.
+          <p class="italic font-semibold max-w-[700px] text-[20px] md:text-[24px] text-baseColor mt-2">
+            Hi, I'm <strong>Biraj</strong> — a passionate creator and dedicated problem solver, driven by innovation, creativity, and a deep love for technology.
           </p>
         </div>
       </article>
-      <hr />
+      <hr class="my-4" />
 
-      <section id="about-section mt-[16px]">
-        <div class="about flex items-center justify-center">
-          <h3 class="text-[30px] font-[600] mb-[10px]">About Me</h3>
+      <!-- About Section -->
+      <section id="about-section" class="mt-6">
+        <div class="about text-center">
+          <h3 class="text-[26px] md:text-[30px] font-semibold mb-3">About Me</h3>
         </div>
-        <div class="description flex items-center justify-center mt-[12px]">
-          <p class="max-w-[800px] mb-[16px]">
-            Hello! I'm <strong>Biraj</strong>, a highly motivated and
-            detail-oriented <strong>Full Stack Web Developer</strong> with
-            hands-on experience in both frontend and backend technologies.
+        <div class="description flex items-center justify-center mt-2 px-4">
+          <p class="max-w-[800px] text-[16px] md:text-[18px] mb-6 leading-relaxed">
+            Hello! I'm <strong>Biraj</strong>, a highly motivated and detail-oriented <strong>Full Stack Web Developer</strong>...
             <br /><br />
-            I specialize in the <strong>MERN Stack</strong> —
-            <em>MongoDB, Express.js, React.js, and Node.js</em> — and have
-            successfully built dynamic, responsive, and scalable web
-            applications. In addition, I work with
-            <strong>Python (Django)</strong> for building robust backend systems
-            and RESTful APIs. <br /><br />
-            I also have a strong passion for user interface design and
-            prototyping, with practical knowledge of <strong>Figma</strong> for
-            creating clean and user-centric designs. My understanding of
-            databases extends to both SQL and NoSQL solutions, making me a
-            versatile developer for any kind of project. <br /><br />
-            Whether you're looking for a committed freelancer to join your team,
-            or you're someone trying to break into the tech industry and need
-            personalized guidance, I’m here to help. <br /><br />
+            I specialize in the <strong>MERN Stack</strong> — <em>MongoDB, Express.js, React.js, and Node.js</em>...
+            <br /><br />
+            Whether you're looking for a committed freelancer or someone to guide you into tech, I’m here to help.
+            <br /><br />
             <strong>Let’s collaborate and bring your ideas to life!</strong>
           </p>
         </div>
 
-        <div
-          class="button-container items-center flex justify-center gap-6 mb-[28px]"
-        >
-          <button
-            class="btn1 bg-[#67e9ee] border-0 text-secondaryColor font-bold cursor-pointer rounded-md transition-[0.3s ease] pt-[12px] pb-[12px] pl-[24px] pr-[24px] hover:scale-105 hover:border-borderColor"
-          >
+        <div class="button-container flex justify-center gap-4 mb-8">
+          <button class="btn1 bg-[#67e9ee] text-secondaryColor font-bold rounded-md transition duration-300 px-6 py-3 hover:scale-105">
             Learn More
           </button>
-          <button
-            class="btn2 bg-[#ee5695] border-0 text-secondaryColor font-bold cursor-pointer rounded-md transition-[0.3s ease] pt-[12px] pb-[12px] pl-[24px] pr-[24px] hover:scale-105 hover:border-borderColor"
-            id="contact"
-          >
+          <button class="btn2 bg-[#ee5695] text-secondaryColor font-bold rounded-md transition duration-300 px-6 py-3 hover:scale-105" id="contact">
             Hire Me
           </button>
         </div>
-        <hr />
-        <div
-          class="download-container mt-[12px] mb-[12px] items-center flex justify-center"
-        >
-          <div
-            class="cv-download bg-[#e0e0dc] border border-[#999] rounded-md ml-[24px] p-[16px] hover:border-[#fab9f5] scale-95"
-          >
+
+        <div class="download-container flex justify-center mb-6">
+          <div class="cv-download bg-[#e0e0dc] border border-[#999] rounded-md p-4 hover:border-[#fab9f5] transition scale-95">
             <a href="./assets/myResumee.pdf" download role="button">
               Download CV
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                height="32px"
-                viewBox="0 -960 960 960"
-                width="32px"
-                fill="#1f1f1f"
-                class="inline-block"
-              >
-                <path
-                  d="M480-315.33 284.67-510.67l47.33-48L446.67-444v-356h66.66v356L628-558.67l47.33 48L480-315.33ZM226.67-160q-27 0-46.84-19.83Q160-199.67 160-226.67V-362h66.67v135.33h506.66V-362H800v135.33q0 27-19.83 46.84Q760.33-160 733.33-160H226.67Z"
-                />
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" width="24px" viewBox="0 0 24 24" fill="#1f1f1f" class="inline-block ml-2">
+                <path d="M5 20h14v-2H5v2zm7-18L5.33 11h4.67v4h4v-4h4.67L12 2z"/>
               </svg>
             </a>
           </div>
         </div>
 
-        <hr />
-
-        <div class="table-container mt-[18px] flex items-center justify-center overflow-x-auto">
-          <div class="overflow-hidden rounded-xl shadow-md w-full">
+        <div class="table-container flex justify-center overflow-x-auto mb-6 px-2">
+          <div class="w-full max-w-[960px] overflow-hidden rounded-xl shadow-md">
             <table class="w-full border-collapse">
               <thead>
-                <tr class="bg-[#f0f0f0]">
-                  <th class="border border-borderColor text-left p-[10px]">
-                    Sno
-                  </th>
-                  <th class="border border-borderColor text-left p-[10px]">
-                    My Projects
-                  </th>
-                  <th class="border border-borderColor text-left p-[10px]">
-                    Frameworks used
-                  </th>
-                  <th class="border border-borderColor text-left p-[10px]">
-                    Completed Date
-                  </th>
+                <tr class="bg-[#f0f0f0] text-left">
+                  <th class="p-3 border">Sno</th>
+                  <th class="p-3 border">My Projects</th>
+                  <th class="p-3 border">Frameworks used</th>
+                  <th class="p-3 border">Completed Date</th>
                 </tr>
               </thead>
               <tbody>
-                <tr class="even:bg-[#d4f0f8] hover:bg-[#f5f5f5] transition-all">
-                  <td class="border border-borderColor text-left p-[10px]">
-                    1
-                  </td>
-                  <td class="border border-borderColor text-left p-[10px]">
-                    Learning Management System
-                  </td>
-                  <td class="border border-borderColor text-left p-[10px]">
-                    Django+Reactjs
-                  </td>
-                  <td class="border border-borderColor text-left p-[10px]">
-                    02/10/2025
-                  </td>
+                <tr class="even:bg-[#d4f0f8] hover:bg-[#f5f5f5] transition">
+                  <td class="p-3 border">1</td>
+                  <td class="p-3 border">Learning Management System</td>
+                  <td class="p-3 border">Django + React</td>
+                  <td class="p-3 border">02/10/2025</td>
                 </tr>
-                <tr class="even:bg-[#d4f0f8] hover:bg-[#f5f5f5] transition-all">
-                  <td class="border border-borderColor text-left p-[10px]">
-                    2
-                  </td>
-                  <td class="border border-borderColor text-left p-[10px]">
-                    Food Delivery App
-                  </td>
-                  <td class="border border-borderColor text-left p-[10px]">
-                    MERN
-                  </td>
-                  <td class="border border-borderColor text-left p-[10px]">
-                    07/11/2024
-                  </td>
+                <tr class="even:bg-[#d4f0f8] hover:bg-[#f5f5f5] transition">
+                  <td class="p-3 border">2</td>
+                  <td class="p-3 border">Food Delivery App</td>
+                  <td class="p-3 border">MERN</td>
+                  <td class="p-3 border">07/11/2024</td>
                 </tr>
-                <tr class="even:bg-[#d4f0f8] hover:bg-[#f5f5f5] transition-all">
-                  <td class="border border-borderColor text-left p-[10px]">
-                    3
-                  </td>
-                  <td class="border border-borderColor text-left p-[10px]">
-                    E-commerce Website
-                  </td>
-                  <td class="border border-borderColor text-left p-[10px]">
-                    MERN
-                  </td>
-                  <td class="border border-borderColor text-left p-[10px]">
-                    09/17/2024
-                  </td>
+                <tr class="even:bg-[#d4f0f8] hover:bg-[#f5f5f5] transition">
+                  <td class="p-3 border">3</td>
+                  <td class="p-3 border">E-commerce Website</td>
+                  <td class="p-3 border">MERN</td>
+                  <td class="p-3 border">09/17/2024</td>
                 </tr>
-                <tr class="even:bg-[#d4f0f8] hover:bg-[#f5f5f5] transition-all">
-                  <td class="border border-borderColor text-left p-[10px]">
-                    4
-                  </td>
-                  <td class="border border-borderColor text-left p-[10px]">
-                    News Website
-                  </td>
-                  <td class="border border-borderColor text-left p-[10px]">
-                    Nextjs
-                  </td>
-                  <td class="border border-borderColor text-left p-[10px]">
-                    01/13/2025
-                  </td>
+                <tr class="even:bg-[#d4f0f8] hover:bg-[#f5f5f5] transition">
+                  <td class="p-3 border">4</td>
+                  <td class="p-3 border">News Website</td>
+                  <td class="p-3 border">Next.js</td>
+                  <td class="p-3 border">01/13/2025</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
       </section>
-      <hr />
-
+      <hr class="my-6" />
+      
       <section id="project-section">
         <div
           class="gallery-heading flex items-center justify-center mt-[18px] mb-[14px] md:grid-cols-3 "
@@ -512,5 +395,8 @@
     >
       &#169; Copyrights 2025 Birajgrs. All Rights Reserved.
     </footer>
+
+
+    </main>
   </body>
 </html>
