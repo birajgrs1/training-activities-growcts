@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio-task5- Updated</title>
+    <link rel="stylesheet" href="./src/style.css" />
+  </head>
+  <body>
+    <header class="w-full bg-primaryColor text-secondaryColor py-4 shadow-md">
+      <nav class="container mx-auto px-4 flex flex-wrap items-center justify-between">
+        <div class="flex items-center space-x-4">
+          <span class="text-[22px] font-bold capitalize">my logo</span>
+        </div>
+
+        <ul class="flex flex-wrap items-center gap-4 md:gap-6 text-[16px] md:text-[18px] font-semibold capitalize">
+          <li><a href="#" class="hover:text-[#ff4875] hover:underline transition-colors duration-200">home</a></li>
+          <li><a href="#about-section" class="hover:text-[#ff4875] hover:underline transition-colors duration-200">about</a></li>
+          <li><a href="#project-section" class="hover:text-[#ff4875] hover:underline transition-colors duration-200">gallery</a></li>
+          <li><a href="#blog-section" class="hover:text-[#ff4875] hover:underline transition-colors duration-200">blogs</a></li>
+          <li><a href="#contact-section" class="hover:text-[#ff4875] hover:underline transition-colors duration-200">contact</a></li>
+          <li><button
+
+            type="button"
+            id="theme-toggle"
+            aria-label="Toggle theme"
+            class="flex items-center space-x-2 hover:text-[#ff4875] transition-colors duration-200"
+          >
+            <span id="theme-text">Change Theme</span>
+            
+            <svg id="light-icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f" style="display: none;">
+              <path d="M480-360q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35Zm0 80q-83 0-141.5-58.5T280-480q0-83 58.5-141.5T480-680q83 0 141.5 58.5T680-480q0 83-58.5 141.5T480-280ZM200-440H40v-80h160v80Zm720 0H760v-80h160v80ZM440-760v-160h80v160h-80Zm0 720v-160h80v160h-80ZM256-650l-101-97 57-59 96 100-52 56Zm492 496-97-101 53-55 101 97-57 59Zm-98-550 97-101 59 57-100 96-56-52ZM154-212l101-97 55 53-97 101-59-57Zm326-268Z"/>
+            </svg>
+          
+            <svg id="dark-icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#1f1f1f">
+              <path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q14 0 27.5 1t26.5 3q-41 29-65.5 75.5T444-660q0 90 63 153t153 63q55 0 101-24.5t75-65.5q2 13 3 26.5t1 27.5q0 150-105 255T480-120Zm0-80q88 0 158-48.5T740-375q-20 5-40 8t-40 3q-123 0-209.5-86.5T364-660q0-20 3-40t8-40q-78 32-126.5 102T200-480q0 116 82 198t198 82Zm-10-270Z"/>
+            </svg>
+          </button>
+          </li>
+
+        </ul>
+      </nav>
+    </header>
+
+    <main role="main" class="main-container w-full px-4 md:px-10 lg:px-20 mt-4">
+      <article id="home-section" class="text-center py-6 px-4">
+        <h2 class="text-[28px] md:text-[32px] mb-4 font-semibold">
+          Hello Everyone,<br />Welcome to My Portfolio!
+        </h2>
+        <div class="flex justify-center mt-2">
+          <img src="./images/img.png" alt="Profile picture" class="h-48 w-48 md:h-64 md:w-64 rounded-xl mb-3" />
+        </div>
+
+        <div class="intro flex items-center justify-center">
+          <p class="italic font-semibold max-w-[700px] text-[20px] md:text-[24px] text-baseColor mt-2">
+            Hi, I'm <strong>Biraj</strong> — a passionate creator and dedicated problem solver, driven by innovation, creativity, and a deep love for technology.
+          </p>
+        </div>
+      </article>
+      <hr class="my-4" />
+
+      <section id="about-section" class="mt-6">
+        <div class="about text-center">
+          <h3 class="text-[26px] md:text-[30px] font-semibold mb-3">About Me</h3>
+        </div>
+        <div class="description flex items-center justify-center mt-2 px-4">
+          <p class="max-w-[800px] text-[16px] md:text-[18px] mb-6 leading-relaxed">
+            Hello! I'm <strong>Biraj</strong>, a highly motivated and detail-oriented <strong>Full Stack Web Developer</strong>...
+            <br /><br />
+            I specialize in the <strong>MERN Stack</strong> — <em>MongoDB, Express.js, React.js, and Node.js</em>...
+            <br /><br />
+            Whether you're looking for a committed freelancer or someone to guide you into tech, I’m here to help.
+            <br /><br />
+            <strong>Let’s collaborate and bring your ideas to life!</strong>
+          </p>
+        </div>
+
+        <div class="button-container flex justify-center gap-4 mb-8">
+          <button class="btn1 bg-[#67e9ee] text-secondaryColor font-bold rounded-md transition duration-300 px-6 py-3 hover:scale-105">
+            Learn More
+          </button>
+          <button class="btn2 bg-[#ee5695] text-secondaryColor font-bold rounded-md transition duration-300 px-6 py-3 hover:scale-105" id="contact888">
+            Hire Me
+          </button>
+        </div>
+
+        <div class="download-container flex justify-center mb-6">
+          <div class="cv-download bg-[#f5d1e3] border border-[#999] rounded-md p-4 hover:border-[#fab9f5] transition scale-95">
+            <a href="./assets/myResumee.pdf" download role="button">
+              Download CV
+              <svg xmlns="http://www.w3.org/2000/svg" height="24px" width="24px" viewBox="0 0 24 24" fill="#1f1f1f" class="inline-block ml-2">
+                <path d="M5 20h14v-2H5v2zm7-18L5.33 11h4.67v4h4v-4h4.67L12 2z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="table-container flex justify-center overflow-x-auto mb-6 px-2">
+          <div class="w-full max-w-[960px] overflow-hidden rounded-xl shadow-md">
+            <table class="w-full border-collapse">
+              <thead>
+                <tr class="bg-[#f7d6d6] text-left">
+                  <th class="p-3 border">Sno</th>
+                  <th class="p-3 border">My Projects</th>
+                  <th class="p-3 border">Frameworks used</th>
+                  <th class="p-3 border">Completed Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="even:bg-[#d4f0f8] hover:bg-[#f7d6d6] transition">
+                  <td class="p-3 border">1</td>
+                  <td class="p-3 border">Learning Management System</td>
+                  <td class="p-3 border">Django + React</td>
+                  <td class="p-3 border">02/10/2025</td>
+                </tr>
+                <tr class="even:bg-[#d4f0f8] hover:bg-[#f7d6d6] transition">
+                  <td class="p-3 border">2</td>
+                  <td class="p-3 border">Food Delivery App</td>
+                  <td class="p-3 border">MERN</td>
+                  <td class="p-3 border">07/11/2024</td>
+                </tr>
+                <tr class="even:bg-[#d4f0f8] hover:bg-[#f7d6d6] transition">
+                  <td class="p-3 border">3</td>
+                  <td class="p-3 border">E-commerce Website</td>
+                  <td class="p-3 border">MERN</td>
+                  <td class="p-3 border">09/17/2024</td>
+                </tr>
+                <tr class="even:bg-[#d4f0f8] hover:bg-[#f7d6d6] transition">
+                  <td class="p-3 border">4</td>
+                  <td class="p-3 border">News Website</td>
+                  <td class="p-3 border">Next.js</td>
+                  <td class="p-3 border">01/13/2025</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      <hr class="my-6" />
+      
+      <section id="project-section">
+        <div
+          class="gallery-heading flex items-center justify-center mt-[18px] mb-[14px] md:grid-cols-3 "
+        >
+          <h3 class="text-[30px] font-semibold mb-[10px]">
+            Explore My Project Gallery
+          </h3>
+        </div>
+
+        <div class="grid-container flex flex-wrap justify-center gap-[20px]">
+          <div id="projects-container" class="grid w-full max-w-[1100px] gap-[20px] grid-cols-1 mb-[24px] sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"></div>
+
+        </div>
+
+      </section>
+      <hr />
+
+      <section id="blog-section">
+        <div class="blog-heading flex items-center justify-center mt-[18px] mb-[14px]">
+          <h3 class="text-[30px] font-semibold mb-[10px]">My Blogs</h3>
+        </div>
+        <div id="blogs-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 md:px-10 lg:px-20 justify-items-center"></div>
+
+      </section>
+      
+      <hr />
+
+      <section
+        id="contact-section"
+        class="bg-bgNew border border-[#f1f2f1] shadow-sm p-[30px] mt-[40px] ml-[46px] mb-[18px]"
+      >
+      <form role="form" class="max-w-[600px] ml-auto mr-auto font-bold" id="myForm" novalidate>
+        <div class="contact-heading flex items-center justify-center mt-[18px] mb-[14px]">
+          <h3 class="text-[30px] font-semibold mb-[10px]">Contact Me</h3>
+        </div>
+    
+        <label for="name" class="block font-bold mt-[10px] mb-[5px]">Name:</label>
+        <input type="text" id="name" placeholder="Name" class="w-[100%] p-[10px] mb-[15px] border border-borderColor rounded-sm" />
+        <div id="name-error" class="error"></div>
+
+        <label for="contact" class="block font-bold mt-[10px] mb-[5px]">Contact No:</label>
+
+<input 
+  type="text" 
+  id="contact" 
+  maxlength="10" 
+  class="w-[100%] p-[10px] mb-[15px] border border-borderColor rounded-sm" 
+  placeholder="Enter 10-digit number"
+  required
+/>
+<div id="contact-error" class="error"></div>
+
+        
+        <label for="email" class="block font-bold mt-[10px] mb-[5px]">Email id:</label>
+        <input type="email" id="email" placeholder="Email" class="w-[100%] p-[10px] mb-[15px] border border-borderColor rounded-sm" />
+        <div id="email-error" class="error"></div>
+    
+        <label for="issue" class="block font-bold mt-[10px] mb-[5px]">Message:</label>
+        <textarea name="issue" id="issue" maxlength="200" placeholder="Enter message here ..." rows="5"
+          class="w-[100%] p-[10px] mb-[15px] h-[120px] border border-borderColor rounded-sm"></textarea>
+        <div id="message-error" class="error"></div>
+        <div id="char-counter" style="text-align: right; font-size: 0.9rem; color: gray;">0 / 200</div>
+    
+        <div id="success-message" class="success text-secondaryColor font-650 font-semibold text-center mt-4"></div>
+    
+        <button type="submit"
+          class="bg-[#23c9fc] text-secondaryColor font-bold cursor-pointer rounded-lg ml-[220px] pt-[10px] pb-[10px] pl-[20px] pr-[20px] hover:scale-105 hover:border hover:border-borderColor hover:transition transition-shadow duration-75">
+          Submit
+        </button>
+      </form>
+      </section>
+    </main>
+    <footer
+      class="bg-primaryColor text-secondaryColor font-bold text-[18px] p-[10px] flex justify-center w-[100%]"
+    >
+      &#169; Copyrights 2025 Birajgrs. All Rights Reserved.
+    </footer>
+
+
+    <script src="./js/script.js" type="module"></script>
+    <script src="./js/formHandling.js"></script>
+    <script src="./js/themeHandling.js"></script>
+  </body>
+
+</html>
