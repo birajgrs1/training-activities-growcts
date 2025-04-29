@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body class="bg-gray-50 text-gray-900 font-['Roboto']">
+
+  <header class="w-full bg-[#0768f0] text-gray-950 py-4 shadow-lg mb-8">
+    <nav class="container mx-auto px-4 flex items-center justify-between">
+      <div class="text-2xl font-bold capitalize">TodoApp</div>
+      <button id="theme-toggle" aria-label="Toggle theme" class="flex items-center space-x-2 text-gray-950 hover:text-pink-200 transition duration-200">
+        <span id="theme-text">Change Theme</span>
+        <svg id="light-icon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 hidden" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 4.5a1 1 0 01.993.883L13 5.5v2a1 1 0 01-1.993.117L11 7.5v-2a1 1 0 011-1zm7.071 2.929a1 1 0 011.32 1.497l-1.415 1.414a1 1 0 01-1.497-1.32l1.592-1.591zM18.5 11a1 1 0 01.117 1.993L18.5 13h-2a1 1 0 01-.117-1.993L16.5 11h2zM12 16.5a1 1 0 01.993.883L13 17.5v2a1 1 0 01-1.993.117L11 19.5v-2a1 1 0 011-1zm-6.071-1.571a1 1 0 011.497 1.32l-1.415 1.414a1 1 0 01-1.497-1.32l1.415-1.414zM5.5 11a1 1 0 01.117 1.993L5.5 13h-2a1 1 0 01-.117-1.993L3.5 11h2zm6.5-6a6 6 0 100 12 6 6 0 000-12z"/>
+        </svg>
+        <svg id="dark-icon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M17.657 16.243A8 8 0 1112 4v0a8 8 0 005.657 12.243z"/>
+        </svg>
+      </button>
+    </nav>
+  </header>
+
+  <main class="px-6 py-8">
+    <section class="max-w-2xl mx-auto">
+      <div class="container border border-gray-300 shadow-md rounded-lg">
+        <div class="text-center p-4 mb-2">
+          <h2 class="text-2xl font-bold" id="form-title">Add Todo</h2>
+        </div>
+        <div class="p-4">
+          <form class="max-w-md mx-auto" novalidate>
+            <input type="hidden" id="task-id">
+            <input type="text" id="title" placeholder="Task title" class="w-full p-3 mb-4 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none" required>
+            <textarea id="description" placeholder="Task description" rows="3" class="w-full p-3 mb-4 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none" required></textarea>
+            <div class="grid grid-cols-2 gap-4 mb-4">
+              <input type="date" id="start-date" class="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none" required>
+              <input type="date" id="end-date" class="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:outline-none" required>
+            </div>
+            <button type="button" id="saveBtn" class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors">
+              <i class="fas fa-save mr-2"></i>Add Task
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 mt-8" id="board">
+      <div class="task-column bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow" id="start">
+        <h2 class="text-xl font-bold mb-4">Start</h2>
+        <div class="empty-state text-center text-gray-400">No tasks</div>
+      </div>
+      <div class="task-column bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow" id="pending">
+        <h2 class="text-xl font-bold mb-4">Pending</h2>
+        <div class="empty-state text-center text-gray-400">No tasks</div>
+      </div>
+      <div class="task-column bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow" id="completed">
+        <h2 class="text-xl font-bold mb-4">Completed</h2>
+        <div class="empty-state text-center text-gray-400">No tasks</div>
+      </div>
+    </div>
+  </main>
+
+  <script src="./js/script.js"></script>
+</body>
+</html>
