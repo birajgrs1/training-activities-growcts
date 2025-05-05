@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.myBtn {
+  @apply bg-gray-300 text-3xl text-black  m-[36px] p-[10px] rounded-md hover:scale-105 hover:border hover:border-pink-300;
+}
