@@ -1,0 +1,127 @@
+
+What is React Router?
+
+React Router is a library that provides the functionality for client-side routing in React. 
+It’s widely used in building single-page applications (SPAs). 
+React Router's major importance lies in its ability to navigate from one page to another in an 
+application while providing a seamless user experience. 
+With this library, users can navigate to pages on a website without triggering a page reload every time 
+a new page is clicked. 
+This also improves the speed and performance of an application.
+
+
+Features of React Router:-
+
+The need for React Router and its importance expands beyond the navigation of web pages. 
+It provides additional helpful features, some of which we will discuss in this section.
+
+Client-side Routing: Client-side routing allows users to access content from a web page without an 
+additional server request. This removes the need for a page to reload as its content becomes available 
+immediately after its link is clicked. This is a major upgrade to traditional websites where a page 
+reload is initiated every time a user clicks a link.
+
+Dynamic Routing: React React Router adopts the dynamic approach of routing which allows routes to be 
+defined during an application’s rendering state. 
+This leads to faster load times and the development of more complex applications.
+
+Redirects: With React Router, you can conditionally navigate to a new route. 
+Redirects allow users to navigate to a new location that overrides the history stack's current location.
+For example, a login page should redirect to a dashboard page after successful user authentication.
+
+: With React suspense in React-Router, you can include a skeleton UI that serves as a placeholder when
+a new page is loaded or a data fetch process is completed.
+
+Error Handling: React Router 6 handles most of the errors in your application, catching errors that are 
+thrown while rendering, loading, or updating data.
+
+
+What’s New in React Router v6?
+In addition to the features discussed above, React Router v6 introduces significant improvements and
+major breaking changes from the previous versions.
+
+Nested Routes: The new version of React Router allows the use of nested routes, 
+a powerful feature used to define a particular route inside another route. 
+This is especially useful in blogs where you need to render multiple components on the same page 
+following a particular sequence. 
+For example, a blog comment component should only be accessed after a particular blog post component 
+has been rendered.
+
+Routes Component: The  component replaces the  component in v6, further simplifying React routing 
+and improving user experience.
+
+Smaller Bundle Size: Compared to v5, React Router v6 has a significantly smaller bundle size, 
+which allows developers to build more performant applications.
+
+Relative Links: Unlike previous versions of React Router, v6 comes with relative links. 
+This defeats the need for explicitly defining a React Router  or  for a child route as it automatically 
+takes the URL of the parent route.
+
+Improved Redirect Functionality: Redirects are implemented using the  component, replacing history.
+push and history.replace as used in v5.
+
+: The  component simplifies the logic of implementing nested routes in React Router v6.
+
+
+useParams Hook: This version provides a way to access the dynamic parts of a URL. 
+This is very helpful when working with dynamic URL paths such as fetching data using a user ID or 
+blog posts using a slug.
+
+Types of React Routers:
+
+There are three types of routers in React:
+
+BrowserRouter: The BrowserRouter is the most commonly used router for modern React applications. 
+It uses the HTML5 History API to manage routing, which allows the URL to be dynamically updated while 
+ensuring the browser’s address bar and history are in sync.
+
+HashRouter: The HashRouter is useful when you want to use a URL hash (#) for routing, rather than the 
+HTML5 history API. It doesn’t require server configuration and works even if the server doesn’t 
+support URL rewriting.
+
+MemoryRouter: The MemoryRouter is used in non-browser environments, such as in React Native or when 
+running tests.
+
+
+Features of React Router:
+
+Declarative Routing: React Router v6 uses the Routes and Route components to define routes 
+declaratively, making the routing configuration simple and easy to read.
+
+Nested Routes: It supports nested routes, allowing for complex and hierarchical routing structures, 
+which helps in organizing the application better.
+
+Programmatic Navigation: The useNavigate hook enables programmatic navigation, allowing developers to 
+navigate between routes based on certain conditions or user actions.
+
+Route Parameters: It provides dynamic routing with route parameters, enabling the creation of routes 
+that can match multiple URL patterns.
+
+Improved TypeScript Support: Enhanced TypeScript support ensures that developers can build type-safe 
+applications, improving development efficiency and reducing errors.
+
+Components of React Router
+Here are the main components used in React Router:
+
+1. BrowserRouter and HashRouter
+BrowserRouter: Uses the HTML5 history API to keep your UI in sync with the URL.
+HashRouter: Uses the hash portion of the URL (i.e., window.location.hash) to keep your UI in sync with 
+the URL.
+<BrowserRouter>
+    {/* Your routes go here */}
+</BrowserRouter>
+
+2. Routes and Route
+Routes: A container for all your route definitions.
+Route: Defines a single route with a path and the component to render.
+<Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="/about" element={<About />} />
+</Routes>
+
+3. Link and NavLink
+Link: Creates navigational links in your application.
+NavLink: Similar to Link but provides additional styling attributes when the link is active.
+<nav>
+    <NavLink to="/" activeClassName="active">Home</NavLink>
+    <Link to="/about">About</Link>
+</nav>
