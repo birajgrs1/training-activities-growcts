@@ -16,6 +16,7 @@ import Rootlayout from "./layout/rootLayout/Rootlayout";
 import ContactLayout from "./layout/contactLayout/ContactLayout";
 import ContactInfo from "./components/contact-infos/ContactInfo";
 import ContactForm from "./components/contact-infos/ContactForm";
+import NotFound from "./components/404_page/NotFound";
 
 function App() {
   const router = createBrowserRouter(
@@ -29,6 +30,8 @@ function App() {
           <Route path="info" element={<ContactInfo />} />
           <Route path="form" element={<ContactForm />} />
         </Route>
+        <Route path="*" element={<NotFound/>}/>
+
       </Route>
     )
   );

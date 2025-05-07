@@ -14,6 +14,7 @@ const ContactInfo = () => {
       <p className="text-gray-700 mb-1">Email: <span className="font-medium">demo@gmail.com</span></p>
       <span className="text-gray-700">Phone no: <span className="font-medium">9800000000</span></span>
     </div>
+   
     </>
   );
 };
