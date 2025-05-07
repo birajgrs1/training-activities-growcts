@@ -1,0 +1,48 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Wireless Headphones",
+      "category": "Electronics",
+      "price": 79.99,
+      "Stock": 800
+    },
+    {
+      "id": 2,
+      "name": "Bluetooth Speaker",
+      "category": "Electronics",
+      "price": 250,
+      "stock": 200
+    },
+    {
+      "id": 3,
+      "name": "Smartphone Stand",
+      "category": "Accessories",
+      "price": 800,
+      "stock": 1800
+    },
+    {
+      "id": 4,
+      "name": "Coffee Maker",
+      "category": "Appliances",
+      "price": 12500,
+      "stock": 75
+    },
+    {
+      "id": 5,
+      "name": "Sports Water Bottle",
+      "category": "Fitness",
+      "price": 19.99,
+      "stock": 500
+    },
+    {
+      "id": 6,
+      "name": "Portable Power Bank",
+      "category": "Electronics",
+      "price": 1500,
+      "stock": 150
+    }
+  ]
+}
+
+
