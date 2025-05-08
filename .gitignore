@@ -6,6 +6,11 @@ dist/
 .vite/
 *.log
 
+# parcel 
+.parcel-cache
+parcel 
+dist
+
 # Tailwind generated cache
 .postcss-cache/
 

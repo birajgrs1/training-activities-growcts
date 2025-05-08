@@ -1,0 +1,164 @@
+
+State management:
+
+What is State?
+State can be defined as an object that houses data that changes over time in an application. 
+In other words, state is a dynamic data storage that provides a mechanism for components to manage, 
+keep track of changing data, and trigger re-rendering when it is updated.
+
+Due to modularization in React, state serves as a container that encapsulates relevant data, 
+logic, and behavior within a component.
+
+When to Use State:: 
+
+When building an application, data plays an integral role in what is been displayed or stored. 
+The same applies to building web applications in React, where components display or operate on 
+data — which can be user input, data fetched from APIs, or any other dynamic content. 
+When there is a need to get data that has to be updated inside of a component, we use state.
+
+import { useState } from "react";
+
+export default function App() {
+      const [items, setItems] = useState([]);
+    const [name, setName] = useState(" ")
+  return (
+    <div>
+      <Header />
+      <Nav />
+      <ListArea />
+      <Footer />
+    </div>
+  );
+}
+
+
+
+Where to Use State
+When using state, it is important to note that there are two types of states in React development:
+
+Global State::::
+
+These are states that are accessible to every component in the application. 
+It is always declared and located in the root component of your app before the JSX is returned.
+
+A state can be considered as a global state if it is a piece of data that is accessible among multiple 
+components thereby, aiding communication between components in the application.
+
+
+Local State:::
+
+Local states refers to the internal data maintained by a component. 
+Local states are located within the parent components in an application. 
+They are only needed and can be accessed in the component.
+
+Using local state, components can independently change and handle their data which leads to 
+partitioning within the application.
+
+Looking at our declared states in the Todo List app, we can say that name is a 
+local state and items is a global state.
+
+The reasons are:
+
+Two or more components will need access to the items state.
+The name state is only needed to input item names into the items list.
+
+
+
+
+
+
+
+import { useState } from "react";
+
+export default function App() {
+
+//Global state
+  const [items, setItems] = useState([]);
+
+//handler function that takes item as a parameter
+  function handleAddItems(item) {
+
+  //setter function that returns a new array with elements from current state with a new item  
+    setItems((items) => [...items, item]);
+  }
+
+  return (
+    <div>
+      <Header />
+      <Nav handleAddItems={handleAddItems} /> //passing handleAddItems as props
+      <ListArea items={items} /> //passing items as props
+      <Footer items={items} />    //passing items as props
+    </div>
+  );
+}
+function Header() {
+  return <h2>ToDo List</h2>;
+}
+
+function Nav({ handleAddItems }) {
+  //Local state function
+  const [name, setName] = useState("");
+
+  //create a handler function that is triggered by Add button
+  const handleAddButtonClick = () => {
+    //creating a newItem object with name and id properties
+    const newItem = { name, id: Date.now() };
+
+    //passing the newItem object into the handler function as an argument
+    handleAddItems(newItem);
+    // Reset the input field after adding the item
+    setName("");
+  };
+  return (
+    <>
+      <input
+        type="text"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+      <button onClick={handleAddButtonClick}>Add</button>
+    </>
+  );
+}
+
+//ListArea component recieving items as props from global state
+
+function ListArea({ items }) {
+  return (
+    <>
+      <ul>
+      //mapping over items array to get individual item as list items
+        {items.map((item) => (
+          <li key={item.id}>{item.name}</li>
+        ))}
+      </ul>
+    </>
+  );
+}
+
+//Footer component recieving items as props from global state
+
+function Footer({ items }) {
+  return (
+    <>
+      {items.length !== 0 ? (
+        <p>You have {items.length} items in your cart</p>
+      ) : (
+        <p>You can start adding items to your list</p>
+      )}
+    </>
+  );
+}
+
+
+
+State vs Props:
+
+The key difference between state and props is that state is managed within a component,
+while props are passed from a parent component to a child component. 
+State is used to manage internal component data, while props are used to pass data from a 
+parent component to a child component.
+In general, we should try to keep state to a minimum and only use it for data that changes within a 
+component. 
+Props should be used to pass data from a parent component to a child component.
+
