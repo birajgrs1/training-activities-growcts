@@ -16,8 +16,8 @@ import ContactLayout from "./layout/contactLayout/ContactLayout";
 import ContactInfo from "./components/contact-infos/ContactInfo";
 import ContactForm from "./components/contact-infos/ContactForm";
 import NotFound from "./components/404_page/NotFound";
-import ProductsLayout from "./layout/productsLayout/ProductsLayout";
-import Products, { ProductsLoader } from "./pages/Products";
+import ProductsLayout, { ProductsLoader } from "./layout/productsLayout/ProductsLayout";
+import Products from "./pages/Products";
 import ProductDetails, { ProductsDetailsLoader } from "./components/react-router/ProductDetails";
 
 function App() {
@@ -32,8 +32,8 @@ function App() {
           <Route path="info" element={<ContactInfo />} />
           <Route path="form" element={<ContactForm />} />
         </Route>
-        <Route path="products" element={<ProductsLayout />}>
-          <Route index element={<Products />} loader={ProductsLoader} />
+        <Route path="products" element={<ProductsLayout />} loader={ProductsLoader}>
+          <Route index element={<Products />} />
           <Route path=":id" element={<ProductDetails />} loader={ProductsDetailsLoader} />
         </Route>
         <Route path="*" element={<NotFound />} />

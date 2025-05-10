@@ -1,8 +1,10 @@
 import React from "react";
 import { Outlet, useLoaderData } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const ProductsLayout = () => {
   const productDetails = useLoaderData();
+
   return (
     <div>
       <div className="flex items-center justify-center m-[28px] mb-[40px]">
@@ -33,6 +35,15 @@ const ProductsLayout = () => {
 };
 
 export default ProductsLayout;
+
+export const ProductsLoader = async () => {
+  const res = await fetch("http://localhost:5000/products");
+  if (!res.ok) {
+    throw new Error("Failed to fetch products");
+  }
+  return res.json();
+};
+
 
 /*
 npx json-server --watch data.json --port 5000     //if data.json is in assets

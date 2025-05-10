@@ -4,17 +4,14 @@ import { useLoaderData } from "react-router-dom";
 const Products = () => {
   const allProducts = useLoaderData();
 
-  // Handle loading state
   if (allProducts === undefined || allProducts === null) {
     return <h2>Loading products...</h2>;
   }
 
-  // Handle empty state
   if (allProducts.length === 0) {
     return <h2>No products available!</h2>;
   }
 
-  // Ensure allProducts is an array before calling .map()
   if (!Array.isArray(allProducts)) {
     return <h2>Error: Invalid data format.</h2>;
   }
@@ -22,8 +19,7 @@ const Products = () => {
   return (
     <div className="flex flex-col items-center justify-center w-full">
       <h1 className="text-[36px] mt-[20px] font-semibold">Products Page</h1>
-      
-      {/* Render all products */}
+
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {allProducts.map((product) => (
           <div key={product.id} className="p-4 border rounded-lg shadow-md">
@@ -38,6 +34,7 @@ const Products = () => {
 };
 
 export default Products;
+
 
 
 /*
