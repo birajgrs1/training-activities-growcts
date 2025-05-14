@@ -1,4 +1,5 @@
 import { createStore } from "redux";
+import myOwnCreateStore from "./myOwnRedux"
 
 document.addEventListener('DOMContentLoaded', () => {
   const postCountElement = document.querySelector('.post-count');
@@ -43,7 +44,10 @@ function reducer(state = initialState, action) {
 }
 
 const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__?.()); //store enhancer
-console.log(store);
+console.log(store, reducer);
+
+const myOwnStore = myOwnCreateStore();
+console.log(myOwnStore);
 // console.log(store,'Redux Devtool Details: ',__REDUX_DEVTOOLS_EXTENSION__());    //redux devtool extension call
 
 // subscribe
@@ -61,10 +65,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     postCountElement.innerText = store.getState().postCount;
     // console.log(store.getState());
-    store.dispatch({ type: INCREMENT });
-    store.dispatch({ type: DECREMENT });
-    store.dispatch({ type: INCREASEBY, payload: 5 });
-    store.dispatch({ type: DECREASEBY, payload: 2 });
+    myOwnStore.dispatch({ type: INCREMENT });
+    myOwnStore.dispatch({ type: DECREMENT });
+    myOwnStore.dispatch({ type: INCREASEBY, payload: 5 });
+    myOwnStore.dispatch({ type: DECREASEBY, payload: 2 });
 
     // unsubscribe()
 
@@ -79,4 +83,3 @@ document.addEventListener('DOMContentLoaded', () => {
 // npm install -g parcel
 // npm install --save-dev parcel
 // npm init -y
-// __REDUX_DEVTOOLS_EXTENSION__
