@@ -17,6 +17,9 @@ const REMOVE_FROM_CART = "cart/removeItem";
 const CART_ITEM_INCREASE_QUANTITY = "cart/increaseItemQuantity";
 const CART_ITEM_DECREASE_QUANTITY = "cart/decreaseItemQuantity";
 
+const ADD_TO_WISHLIST = "wishList/addItem";
+const REMOVE_FROM_WISHLIST = "wishList/removeItem";
+
 function reducer(state = initialState, action) {
   console.log(state);
   switch (action.type) {
@@ -54,6 +57,17 @@ function reducer(state = initialState, action) {
           .filter((cartItem) => cartItem.quantity > 0),
       };
 
+      case ADD_TO_WISHLIST:
+      return { ...state, wishList: [...state.wishList, action.payload] };
+
+      case REMOVE_FROM_WISHLIST:
+      return {
+        ...state,
+        wishList: state.wishList.filter(
+          (wishLists) => wishLists.productId !== action.payload.productId
+        ),
+      };
+
     default:
       return state;
   }
@@ -76,7 +90,7 @@ store.dispatch({
   type: REMOVE_FROM_CART,
   payload: { productId: 4 },
 });
-
+/*
 store.dispatch({
   type: REMOVE_FROM_CART,
   payload: { productId: 5 },
@@ -89,11 +103,26 @@ store.dispatch({
   type: CART_ITEM_INCREASE_QUANTITY,
   payload: { productId: 12 },
 });
+*/
 
 store.dispatch({
   type: CART_ITEM_DECREASE_QUANTITY,
   payload: { productId: 12 },
 });
 
+
+store.dispatch({
+  type: ADD_TO_WISHLIST,
+  payload: { productId: 7 },
+});
+
+store.dispatch({
+  type: ADD_TO_WISHLIST,
+  payload: { productId: 8 },
+});
+store.dispatch({
+  type: REMOVE_FROM_WISHLIST,
+  payload: { productId: 8 },
+});
 
 console.log(store.getState());
