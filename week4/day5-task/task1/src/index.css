@@ -1,0 +1,18 @@
+/* index.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white text-black; /* Light mode */
+  }
+
+  html.dark body {
+    @apply bg-gray-900 text-white; /* Dark mode */
+  }
+
+  header {
+    @apply p-4 bg-[#cfe3df] dark:bg-[#b391ad] flex justify-between items-center;
+  }
+}
