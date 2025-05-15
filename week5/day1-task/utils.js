@@ -2,7 +2,10 @@ const fs = require("fs").promises;
 const path = require("path");
 const crypto = require("crypto");
 
+
+
 const notesFile = path.join(__dirname, "notes.json");
+
 
 async function ensureNotesFile() {
   try {
