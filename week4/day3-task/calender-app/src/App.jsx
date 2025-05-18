@@ -1,15 +1,16 @@
-import Home from "./pages/Home";
-import EventModal from "./components/EventModal";
-import { CssBaseline } from "@mui/material";
+import React from 'react';
+import Header from './components/Header';
+import EventModal from './components/EventModal';
+import CalendarView from './components/CalendarView';
 
-const App = () => {
+function App() {
   return (
-    <div>
-      <CssBaseline />
-      <Home />
+    <div className="min-h-screen bg-gray-50">
+      <Header />
+      <CalendarView />
       <EventModal />
     </div>
   );
-};
+}
 
 export default App;
