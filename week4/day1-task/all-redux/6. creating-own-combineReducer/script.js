@@ -30,10 +30,8 @@ debugger
       debugger;
       return nextState;
     }, {});
-    debugger;
   }
 }
-
 
 const reducer = combineReducers({
   products: productReducer,
