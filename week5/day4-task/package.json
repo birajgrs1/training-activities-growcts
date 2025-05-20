@@ -1,0 +1,18 @@
+{
+  "name": "day4-task",
+  "version": "1.0.0",
+  "description": "This is my day4 task in week5",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Biraj",
+  "type": "module",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10",
+    "uuid": "^11.1.0"
+  }
+}
