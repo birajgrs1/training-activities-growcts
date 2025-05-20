@@ -19,14 +19,18 @@ npx parcel index.html
 
 // creating own combineReducers
 
+debugger;
 const combineReducers = (reducer) =>{  // reducer is an object, which helps us to combine multiple reducers
   const reducerKeys = Object.keys(reducer); // Here, we are getting the keys of the reducer object
-
-  return (state = {}, action) => {  
+debugger
+  return (state = {}, action) => { 
+    debugger; 
     return reducerKeys.reduce((nextState, key) => {
       nextState[key] = reducer[key](state[key], action);
+      debugger;
       return nextState;
     }, {});
+    debugger;
   }
 }
 
