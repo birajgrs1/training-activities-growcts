@@ -1,34 +1,36 @@
 import express from 'express';
-import loggerHandle from './src/middlewares/loggerHandle.js';
-import errorHandler from './src/middlewares/errorHandler.js'; 
-import requestEnhancer from './src/middlewares/requestEnhancer.js'; 
-import logRoutes from './src/routes/logRoutes.js'; 
+import clientRoutes from './src/routes/clientRoutes.js';
+import { loggerMiddleware } from './src/middleware/logRequest.js';
+import { errorHandler } from './src/middleware/errorHandler.js';
+import fs from 'fs';
+import path from 'path';
 
 const app = express();
 const PORT = 3000;
 
-// Middlewares
+// Middleware
 app.use(express.json());
-app.use(requestEnhancer);
-app.use(loggerHandle);
-app.use('/logs', logRoutes);
-app.use(errorHandler); 
+app.use(loggerMiddleware); 
 
-app.get('/', (req, res) => {
-  res.send("This is my week5's day4 task!");
+app.use('/api', clientRoutes);
+
+app.get('/logs/errors', (req, res) => {
+  const filePath = path.resolve('logs/error.log');
+
+  fs.readFile(filePath, 'utf-8', (err, data) => {
+    if (err) return res.status(500).json({ error: 'Could not read log file' });
+
+    const lines = data.trim().split('\n');
+    const last20 = lines.slice(-20);
+    res.status(200).json({ last20 });
+  });
 });
 
-app.post('/clients',(req, res,next) => {
-  const {name,email} = req.body;
-  if(!name || !email){
-    return res.status(400).json({message:"Missing required fields"});
-  }
-  else{
-    next();
-  }
-  res.json("Client created");
-  
-})
+
+app.get('/', (req, res) => res.send('Client API'));
+
+
+app.use(errorHandler);
 
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
