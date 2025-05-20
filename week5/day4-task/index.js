@@ -1,19 +1,39 @@
 import express from 'express';
-import clientRoutes from './src/routes/clientRoutes.js';
+import loggerHandle from './src/middlewares/loggerHandle.js';
+import errorHandler from './src/middlewares/errorHandler.js'; 
+import requestEnhancer from './src/middlewares/requestEnhancer.js'; 
+import logRoutes from './src/routes/logRoutes.js'; 
 
 const app = express();
 const PORT = 3000;
 
+// Middlewares
 app.use(express.json());
-app.use('/api', clientRoutes);
+app.use(requestEnhancer);
+app.use(loggerHandle);
+app.use('/logs', logRoutes);
+app.use(errorHandler); 
 
 app.get('/', (req, res) => {
-  res.send('Client API');
+  res.send("This is my week5's day4 task!");
 });
+
+app.post('/clients',(req, res,next) => {
+  const {name,email} = req.body;
+  if(!name || !email){
+    return res.status(400).json({message:"Missing required fields"});
+  }
+  else{
+    next();
+  }
+  res.json("Client created");
+  
+})
 
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
+
 
 
 /*
@@ -49,7 +69,9 @@ They arise when the server has successfully fulfilled the client's request
 207: Multi-Status
 208: Already Reported
 230: Multi-Status
-240: IM Used  - It means that the server has fulfilled the request and the response is a representation of the result of one or more instance-manipulations applied to the current instance
+240: IM Used  - It means that the server has fulfilled the request and the response is a representation
+ of the result of one or more instance-manipulations applied to the current instance
+ 
 250: Multi-Status
 
 3XX:
