@@ -11,7 +11,8 @@ const employeeSchema = new mongoose.Schema({
   password: {
     type: String,
     required: true,
-    minlength: 6
+    minlength: 6,
+    select: false
   },
   email: {
     type: String,
@@ -31,8 +32,26 @@ const employeeSchema = new mongoose.Schema({
   departmentId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Department'
+  },
+  joiningDate: {
+    type: Date,
+    default: Date.now
   }
-}, { timestamps: true });
+}, { timestamps: true, toJSON: { virtuals: true, getters: true }, toObject: { virtuals: true, getters: true } });
+
+employeeSchema.virtual('payrolls', {
+  ref: 'Payroll',
+  localField: '_id',
+  foreignField: 'employee'
+});
+
+employeeSchema.virtual('isHighEarner').get(function() {
+  return this.salary > 100000; 
+});
+
+employeeSchema.path('joiningDate').get(function(date) {
+  return date.toISOString().split('T')[0];
+});
 
 employeeSchema.pre('validate', function (next) {
   if (this.position === 'Manager' && !this.departmentId) {
@@ -47,5 +66,11 @@ employeeSchema.pre('save', async function (next) {
   this.password = await bcrypt.hash(this.password, salt);
   next();
 });
+
+employeeSchema.methods.toJSON = function () {
+  const obj = this.toObject();
+  delete obj.password;
+  return obj;
+};
 
 export const Employee = mongoose.model('Employee', employeeSchema);

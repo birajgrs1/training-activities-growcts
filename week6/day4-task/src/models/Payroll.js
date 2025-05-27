@@ -14,10 +14,19 @@ const payrollSchema = new mongoose.Schema({
     salary: {
         type: Number,
         required: true
+    },
+    deductions: {
+        type: Number,
+        default: 0
+    },
+    netPay: {
+        type: Number
     }
 }, { timestamps: true });
 
+payrollSchema.pre('save', function (next) {
+  this.netPay = this.salary - this.deductions;
+  next();
+});
+
 export const Payroll = mongoose.model('Payroll', payrollSchema);
-
-
-
