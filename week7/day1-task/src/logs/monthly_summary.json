@@ -1,0 +1,19 @@
+{
+  "generatedAt": "2025-05-29T10:44:37.397Z",
+  "newEmployees": [
+    {
+      "id": "68382d8ce5b5aaaffabc80b2",
+      "name": "Ravi Sharma"
+    },
+    {
+      "id": "68382e0be5b5aaaffabc80b6",
+      "name": "Dipa Thapa"
+    },
+    {
+      "id": "68382e78e5b5aaaffabc80ba",
+      "name": "Suraj Tamang"
+    }
+  ],
+  "terminatedEmployees": [],
+  "payrollTotal": 264500
+}
