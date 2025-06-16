@@ -1,0 +1,20 @@
+{
+  "name": "day2-task",
+  "version": "1.0.0",
+  "description": "Authentication Fundamentals, Security Principles & Environment Setup",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --watch index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Biraj Ghorasaine",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "mongoose": "^8.15.2"
+  }
+}
