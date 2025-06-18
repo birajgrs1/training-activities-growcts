@@ -1,5 +1,5 @@
-const notifyUser = (req, res, next) => {
-  res.status(200).json({ message: "Users notified" });
+const notifyUser = (email, device) => {
+  console.log(`User ${email} logged in from ${device}`);
 };
 
 export default notifyUser;

@@ -1,10 +1,11 @@
-import { login, register } from "../controllers/authController.js";
-import express from "express";
-import  loginLimiter  from "../middlewares/rateLimiter.js";
+import express from 'express';
+import { registerUser, login } from '../controllers/authController.js';
+import rateLimiter from '../middlewares/rateLimiter.js';
 
 const authRouter = express.Router();
 
-authRouter.post("/login", loginLimiter, login);
-authRouter.post("/register", register);
+authRouter.post('/register', registerUser);
+
+authRouter.post('/login', rateLimiter, login);
 
 export default authRouter;

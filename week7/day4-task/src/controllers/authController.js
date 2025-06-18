@@ -1,13 +1,32 @@
-import Employee from "../models/User.js";
+import Employee from "../models/Employee.js";
 import Device from "../models/Device.js";
 import jwt from "jsonwebtoken";
 import notifyUser from "../utils/notifyUser.js";
+import bcrypt from "bcrypt";
 
+export const registerUser = async (req, res) => {
+  try {
+    const { name, email, password, role } = req.body;
 
-export const register = async (req, res) => {
-    const {name, email, password, role } = req.body;
-    const user = await Employee.create({ name, email, password, role });
-    res.status(201).json(user);
+    const existingUser = await Employee.findOne({ email });
+    if (existingUser) {
+      return res.status(400).json({ message: "User already exists" });
+    }
+
+    const user = new Employee({
+      name,
+      email,
+      password,
+      role: role || "admin",
+    });
+
+    await user.save();
+
+    res.status(201).json({ message: "User registered successfully" });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: "Server error" });
+  }
 };
 
 
@@ -18,8 +37,9 @@ export const login = async (req, res) => {
   if (!user) return res.status(403).json({ error: "Invalid credentials" });
   if (user.isLocked) return res.status(403).json({ error: "Account locked" });
 
-  if (password !== user.password) {
-    user.failedAttempts += 1;
+  const isMatch = await bcrypt.compare(password, user.password);
+  if (!isMatch) {
+    user.failedAttempts = (user.failedAttempts || 0) + 1;
     if (user.failedAttempts >= 3) user.isLocked = true;
     await user.save();
     return res.status(403).json({ error: "Invalid credentials" });
@@ -37,6 +57,8 @@ export const login = async (req, res) => {
 
   notifyUser(user.email, deviceInfo);
   res.json({ token });
+  console.log("BODY:", req.body);
+
 };
 
 
