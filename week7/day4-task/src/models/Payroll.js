@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+const mongoose = require('mongoose');
 
 const payrollSchema = new mongoose.Schema({
   employeeId: {
@@ -6,17 +6,9 @@ const payrollSchema = new mongoose.Schema({
     ref: 'Employee',
     required: true
   },
-  month: {
-    type: String,
-    required: true
-  },
-  year: {
+  Salary: {
     type: Number,
-    required: true
-  },
-  baseSalary: {
-    type: Number,
-    required: true
+    required: [true, 'Salary is required']
   },
   bonus: {
     type: Number,
@@ -26,15 +18,28 @@ const payrollSchema = new mongoose.Schema({
     type: Number,
     default: 0
   },
-  totalPay: {
-    type: Number,
-    required: true
-  },
-  paidOn: {
+  grossPay: Number,
+  netPay: Number,
+  createdAt: {
     type: Date,
     default: Date.now
   }
+}, {
+  toJSON: { virtuals: true },
+  toObject: { virtuals: true }
 });
 
-const Payroll = mongoose.model('Payroll', payrollSchema);
-export default Payroll;
+payrollSchema.pre('save', function (next) {
+  const gross = this.Salary + this.bonus;
+  const net = gross - this.deductions;
+
+  if (net < this.Salary) {
+    return next(new Error('Net pay cannot be less than base salary.'));
+  }
+
+  this.grossPay = gross;
+  this.netPay = net;
+  next();
+});
+
+module.exports = mongoose.model('Payroll', payrollSchema);

@@ -1,64 +1,134 @@
-import Employee from "../models/Employee.js";
-import Device from "../models/Device.js";
-import jwt from "jsonwebtoken";
-import notifyUser from "../utils/notifyUser.js";
-import bcrypt from "bcrypt";
+const User = require('../models/User');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const { generateAccessToken, generateRefreshToken } = require('../utils/tokenUtils');
+const Device = require('../models/Device');
+const {
+  checkUserLockStatus,
+  handleFailedLogin,
+  resetLoginAttempts,
+  comparePassword,
+  issueTokens
+} = require('../services/authHelpers');
 
-export const registerUser = async (req, res) => {
+exports.register = async (req, res) => {
+    try {
+        const { email, phone, password, role } = req.body;
+        const existingUser = await User.findOne({
+            $or: [{ email: email.toLowerCase().trim() }, { phone }]
+        });
+        if (existingUser) {
+            if (existingUser.email === email.toLowerCase().trim()) {
+                return res.status(400).json({ message: 'Duplicate email' });
+            }
+            if (existingUser.phone === phone) {
+                return res.status(400).json({ message: 'Duplicate phone number' });
+            }
+        }
+        const user = new User({ email, phone, password, role });
+        await user.save();
+        res.status(201).json({ message: 'Registered successfully' });
+    } catch (err) {
+        console.error('Registration error:', err);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+};
+
+
+
+exports.login = async (req, res) => {
   try {
-    const { name, email, password, role } = req.body;
+    const { email, password } = req.body;
+    const user = await User.findOne({ email: email.toLowerCase().trim() });
 
-    const existingUser = await Employee.findOne({ email });
-    if (existingUser) {
-      return res.status(400).json({ message: "User already exists" });
+    if (!user) return res.status(401).json({ message: 'Invalid credentials' });
+
+    const lockStatus = checkUserLockStatus(user);
+    if (lockStatus.locked) {
+      return res.status(403).json({ message: lockStatus.message });
     }
 
-    const user = new Employee({
-      name,
-      email,
-      password,
-      role: role || "admin",
-    });
+    const isMatch = await comparePassword(password, user.password);
+    if (!isMatch) {
+      await handleFailedLogin(user);
+      return res.status(401).json({ message: 'Invalid Password' });
+    }
 
-    await user.save();
+    await resetLoginAttempts(user);
+    const accessToken = await issueTokens(user, req, res);
+    return res.json({ accessToken });
 
-    res.status(201).json({ message: "User registered successfully" });
   } catch (err) {
-    console.error(err);
-    res.status(500).json({ message: "Server error" });
+    console.error('Login error:', err);
+    res.status(500).json({ message: 'Internal server error' });
   }
 };
 
+exports.logout = async (req, res) => {
+    try {
+        const token = req.cookies.refreshToken;
+        if (!token) return res.sendStatus(204);
 
-export const login = async (req, res) => {
-  const { email, password, deviceInfo } = req.body;
-  const user = await Employee.findOne({ email });
+        const payload = jwt.verify(token, process.env.JWT_REFRESH_SECRET);
+        const user = await User.findById(payload.id);
+        if (user) {
+            user.refreshToken = '';
+            await user.save();
+        }
 
-  if (!user) return res.status(403).json({ error: "Invalid credentials" });
-  if (user.isLocked) return res.status(403).json({ error: "Account locked" });
-
-  const isMatch = await bcrypt.compare(password, user.password);
-  if (!isMatch) {
-    user.failedAttempts = (user.failedAttempts || 0) + 1;
-    if (user.failedAttempts >= 3) user.isLocked = true;
-    await user.save();
-    return res.status(403).json({ error: "Invalid credentials" });
-  }
-
-  user.failedAttempts = 0;
-  await user.save();
-
-  const token = jwt.sign(
-    { id: user._id, role: user.role },
-    process.env.SECRET_KEY,
-    { expiresIn: "1h" }
-  );
-  await new Device({ employeeId: user._id, deviceInfo }).save();
-
-  notifyUser(user.email, deviceInfo);
-  res.json({ token });
-  console.log("BODY:", req.body);
-
+        res.clearCookie('refreshToken');
+        res.json({ message: 'Logged out successfully' });
+    } catch (err) {
+        console.error('Logout error:', err);
+        res.status(403).json({ message: 'Invalid token' });
+    }
 };
 
+exports.refreshToken = async (req, res) => {
+    try {
+        const token = req.cookies.refreshToken;
+        if (!token) return res.sendStatus(401);
+        const payload = jwt.verify(token, process.env.JWT_REFRESH_SECRET);
+        const user = await User.findById(payload.id);
+        if (!user || user.tokenVersion !== payload.version || user.refreshToken !== token) {
+            return res.sendStatus(403);
+        }
+        const newRefreshToken = generateRefreshToken(user);
+        user.refreshToken = newRefreshToken;
+        await user.save();
+        res.cookie('refreshToken', newRefreshToken, {
+            httpOnly: true,
+            secure: true,
+            sameSite: 'Strict'
+        });
+        res.json({ accessToken: generateAccessToken(user) });
+    } catch (err) {
+        console.error('Refresh error:', err);
+        res.status(403).json({ message: 'Invalid refresh token' });
+    }
+};
 
+exports.changePassword = async (req, res) => {
+    try {
+        const { currentPassword, newPassword } = req.body;
+        if (!currentPassword || !newPassword) {
+            return res.status(400).json({ message: 'Current and new password required' });
+        }
+
+        const user = await User.findById(req.user.id);
+        if (!user) return res.status(404).json({ message: 'User not found' });
+
+        const isMatch = await bcrypt.compare(currentPassword, user.password);
+        if (!isMatch) return res.status(400).json({ message: 'Current password incorrect' });
+
+        user.password = newPassword;
+        user.refreshToken = '';
+        await user.save();
+
+        res.clearCookie('refreshToken');
+        res.json({ message: 'Password changed. Please login again.' });
+    } catch (err) {
+        console.error('Password change error:', err);
+        res.status(500).json({ message: 'Internal server error' });
+    }
+};

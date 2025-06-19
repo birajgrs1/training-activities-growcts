@@ -1,33 +1,27 @@
-import express from "express";
-import dotenv from "dotenv";
-import connectDB from "./src/config/dbConnector.js";
-import cors from "cors";
-
-import authRouter from "./src/routes/authRouter.js";
-import employeeRouter from "./src/routes/employeeRouter.js";
-import departmentRouter from "./src/routes/departmentRouter.js";
-import payrollRouter from "./src/routes/payrollRouter.js";
-
-dotenv.config();
-
+const express = require('express');
 const app = express();
+const cookieParser = require('cookie-parser');
+const authRoutes = require('./src/routes/authRoutes');
+const userRoutes = require('./src/routes/userRoutes');
+const employeeRoutes = require('./src/routes/employeeRoutes');
+const departmentRoutes = require('./src/routes/departmentRoutes');
+const payrollRoutes = require('./src/routes/payrollRoutes')
 
-app.use(cors({ origin: true, credentials: true }));
 app.use(express.json());
+app.use(cookieParser());
+require('dotenv').config();
+require('./src/config/db')();
 
 
-app.use("/api/auth", authRouter);
-app.use("/api/employees", employeeRouter);
-app.use("/api/departments", departmentRouter);
-app.use("/api/payroll", payrollRouter);
+app.use('/api/auth', authRoutes);
+app.use('/api/users', userRoutes);
+app.use('/api/employees', employeeRoutes);
+app.use('/api/departments', departmentRoutes);
+app.use('/api/payroll', payrollRoutes);
 
-// app.get("/", (req, res) => {
-//   res.send("Client API is running ");
-// });
 
+//handling servr running 
 const port = process.env.PORT || 3000;
-connectDB().then(() => {
-  app.listen(port, () => {
-    console.log(` Server is running on http://localhost:${port}`);
-  });
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
 });
